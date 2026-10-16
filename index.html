@@ -78,17 +78,17 @@ header.solid{background:rgba(18,17,16,.9);backdrop-filter:blur(12px);-webkit-bac
 
 /* ---------- Hero: a caixa abre com a rolagem ---------- */
 .hero{position:relative;height:250vh;height:250svh}
-.pin{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;overflow:hidden}
+.pin{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;overflow:hidden;padding-top:74px}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;width:100%}
 .hero-copy{min-width:0;position:relative;z-index:2}
-.hero h1{font-size:clamp(3.4rem,8vw,7.4rem);margin:10px 0 20px}
+.hero h1{font-size:clamp(3.2rem,6.6vw,6.4rem);margin:10px 0 20px}
 .hero h1 .hand{display:block;font-size:.5em;margin-bottom:6px;transform:rotate(-3deg);transform-origin:left}
 .lead{font-size:1.12rem;color:var(--chalk2);max-width:29em;margin:0 0 28px}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 .chips-info{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
 .chips-info span{font-weight:700;font-size:.82rem;padding:8px 13px;border-radius:999px;background:var(--ink3);box-shadow:inset 0 0 0 1px var(--line);color:var(--chalk2)}
 .stage{position:relative;display:grid;place-items:center;height:min(78svh,620px);perspective:1400px;perspective-origin:50% 20%}
-.box{--b:min(36vw,440px);position:relative;width:var(--b);height:var(--b);transform-style:preserve-3d;transform:rotateX(48deg) rotateZ(-8deg);margin-top:16%}
+.box{--b:min(30vw,390px);position:relative;width:var(--b);height:var(--b);transform-style:preserve-3d;transform:rotateX(48deg) rotateZ(-8deg);margin-top:30%}
 .base{position:absolute;inset:0;background:var(--kraft);border-radius:6px;transform-style:preserve-3d;box-shadow:0 0 0 calc(var(--b)*.03) var(--kraft2) inset,0 60px 80px -20px rgba(0,0,0,.8)}
 .base::after{content:"";position:absolute;inset:calc(var(--b)*.03);background:repeating-linear-gradient(90deg,rgba(0,0,0,.04) 0 2px,transparent 2px 7px),var(--kraft);border-radius:3px}
 .wall{position:absolute;left:0;right:0;bottom:0;height:calc(var(--b)*.1);background:linear-gradient(var(--kraft2),var(--kraft3));transform-origin:bottom;transform:rotateX(-90deg)}
@@ -98,7 +98,7 @@ header.solid{background:rgba(18,17,16,.9);backdrop-filter:blur(12px);-webkit-bac
 .half img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .half.l{clip-path:inset(0 50% 0 0)}
 .half.r{clip-path:inset(0 0 0 50%)}
-.lid{position:absolute;inset:0;transform-origin:top;transform-style:preserve-3d;z-index:5;will-change:transform}
+.lid{position:absolute;inset:0;transform-origin:top;transform-style:preserve-3d;z-index:5;will-change:transform;transform:translateZ(6px)}
 .lid .face{position:absolute;inset:0;border-radius:6px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .lid .out{background:repeating-linear-gradient(90deg,rgba(0,0,0,.035) 0 2px,transparent 2px 8px),var(--kraft);box-shadow:inset 0 0 0 calc(var(--b)*.02) rgba(0,0,0,.08);display:grid;place-items:center}
 .lid .in{background:linear-gradient(#b88a53,#a37742);transform:rotateX(180deg)}
@@ -114,7 +114,7 @@ header.solid{background:rgba(18,17,16,.9);backdrop-filter:blur(12px);-webkit-bac
 .tag{position:absolute;z-index:8;font-family:var(--f-hand);font-size:1.15rem;background:var(--chalk);color:var(--ink);padding:6px 14px;border-radius:10px;box-shadow:0 12px 24px -10px rgba(0,0,0,.7);opacity:0;transform:translateY(14px) rotate(var(--r));transition:opacity .5s,transform .6s var(--ease);white-space:nowrap}
 .tag.t1{--r:-6deg;left:2%;top:58%}.tag.t2{--r:5deg;right:0;top:66%}
 .stage.open .tag{opacity:1;transform:translateY(0) rotate(var(--r))}
-.cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font-family:var(--f-hand);color:var(--chalk2);font-size:1rem;display:flex;flex-direction:column;align-items:center;gap:4px;transition:opacity .4s;z-index:3}
+.cue{position:absolute;left:75%;bottom:22px;transform:translateX(-50%);font-family:var(--f-hand);color:var(--chalk2);font-size:1rem;display:flex;flex-direction:column;align-items:center;gap:4px;transition:opacity .4s;z-index:3}
 .cue i{width:2px;height:26px;background:linear-gradient(var(--tomato),transparent);animation:cue 1.6s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 @media (max-width:900px){
@@ -124,13 +124,14 @@ header.solid{background:rgba(18,17,16,.9);backdrop-filter:blur(12px);-webkit-bac
   .hero h1{font-size:clamp(2.7rem,12.5vw,4.2rem);margin:4px 0 12px}
   .lead{font-size:1rem;margin-bottom:18px}
   .chips-info{display:none}
-  .actions .btn{flex:1 1 auto;padding:14px 18px}
+  .hero .actions{flex-wrap:nowrap;gap:8px}.hero .actions .btn{flex:1 1 0;padding:14px 10px;font-size:.92rem;min-width:0}
+  .actions .btn{flex:1 1 auto}
   .stage{height:auto;min-height:0;margin-top:-4px}
-  .box{--b:min(60vw,36svh,330px);margin-top:calc(var(--b)*.32)}
+  .box{--b:min(62vw,32svh,330px);margin-top:calc(var(--b)*.9)}
   .tag{font-size:.95rem}
-  .tag.t1{left:0;top:62%}.tag.t2{right:0;top:72%}
+  .tag.t1{left:2%;top:58%}.tag.t2{right:6%;top:70%}
 }
-@media (max-width:900px) and (max-height:700px){.lead{display:none}}
+@media (max-width:900px){.hero .lead{display:none}.cue{display:none}}
 
 /* ---------- Faixa ---------- */
 .ticker{background:var(--tomato);color:#fff;overflow:hidden;transform:rotate(-1.5deg);margin:-10px -20px 0;position:relative;z-index:4;box-shadow:0 18px 40px -20px rgba(0,0,0,.8)}
@@ -323,7 +324,7 @@ footer{border-top:1px solid var(--line);padding-block:26px calc(26px + env(safe-
           <p class="lead">Desde 2023 assando pizza toda noite no centro de Central de Minas. Meia a meia do seu jeito, pra comer aqui ou receber em casa.</p>
           <div class="actions">
             <a class="btn" href="https://wa.me/5533998455596?text=Ol%C3%A1%2C%20Venancio's!%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Pedir no WhatsApp</a>
-            <a class="btn ghost" href="#meia">Montar meia a meia</a>
+            <a class="btn ghost" href="#meia">Meia a meia</a>
           </div>
           <div class="chips-info"><span>🛵 Delivery rápido</span><span>🍕 Refeição no local</span><span>💳 Crédito, débito e aproximação</span></div>
         </div>
@@ -543,12 +544,12 @@ const hpL=document.getElementById('hpL'),hpR=document.getElementById('hpR');
 setPhoto(hpL,'frango',700);setPhoto(hpR,'chocolate',700);
 const hero=document.getElementById('hero'),lid=document.getElementById('lid'),stage=document.getElementById('stage'),box=document.getElementById('box'),cue=document.getElementById('cue'),heroPizza=document.getElementById('heroPizza');
 function heroUpdate(){
-  if(reduce){lid.style.transform='rotateX(-108deg)';stage.classList.add('open');return}
+  if(reduce){lid.style.transform='translateZ(6px) rotateX(108deg)';stage.classList.add('open');return}
   const r=hero.getBoundingClientRect(),vh=innerHeight,p=clamp(-r.top/Math.max(1,r.height-vh),0,1);
   const o=clamp(p/0.55,0,1),e=1-Math.pow(1-o,3);
-  lid.style.transform=`rotateX(${-108*e}deg)`;
+  lid.style.transform=`translateZ(6px) rotateX(${108*e}deg)`;
   const t=clamp((p-0.5)/0.5,0,1);
-  box.style.transform=`rotateX(${48-18*t}deg) rotateZ(${-8+8*t}deg) scale(${1+0.06*t})`;
+  box.style.transform=`rotateX(${48-8*t}deg) rotateZ(${-8+8*t}deg) scale(${1+0.04*t})`;
   heroPizza.style.transform=`translateZ(${2+16*t}px) rotate(${t*30}deg)`;
   stage.classList.toggle('open',o>0.85);
   cue.style.opacity=p>0.05?0:1;
